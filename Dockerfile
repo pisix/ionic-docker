@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:latest
 MAINTAINER marco [dot] turi [at] hotmail [dot] it
 
 ENV DEBIAN_FRONTEND=noninteractive \
