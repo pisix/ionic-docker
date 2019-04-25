@@ -34,7 +34,6 @@ RUN apt-get update &&  \
 # install python-software-properties (so you can do add-apt-repository)
     apt-get update && apt-get install -y -q software-properties-common  && \
     add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" -y && \
-    add-apt-repository "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" -y && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886 && \
     echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
     apt-get update && apt-get -y install oracle-java8-installer && \
