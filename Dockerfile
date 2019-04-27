@@ -33,10 +33,11 @@ RUN apt-get update &&  \
 
 # install python-software-properties (so you can do add-apt-repository)
     apt-get update && apt-get install -y -q software-properties-common  && \
-    rm -fr /etc/apt/sources.list.d/webupd8team-java.list && \
-    add-apt-repository ppa:webupd8team/java -y && \
-    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+    apt-get install default-jre -y && \
+    apt-get install default-jdk -y && \
+    add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" -y && \
     apt-get update && apt-get -y install oracle-java8-installer && \
+    echo javac -version && \ 
 
 # System libs for android enviroment
     echo ANDROID_HOME="${ANDROID_HOME}" >> /etc/environment && \
