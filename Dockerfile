@@ -1,10 +1,10 @@
 FROM debian:latest
-MAINTAINER marco [dot] turi [at] hotmail [dot] it
+MAINTAINER leundeufranky [at] gmail [dot] com
 
 ENV DEBIAN_FRONTEND=noninteractive \
     ANDROID_HOME=/opt/android-sdk-linux \
-    NPM_VERSION=6.5.0 \
-    IONIC_VERSION=4.5.0 \
+    NPM_VERSION=6.9.0 \
+    IONIC_VERSION=4.12.0 \
     CORDOVA_VERSION=8.1.2 \
     YARN_VERSION=1.12.3 \
     GRADLE_VERSION=4.10.3 \
@@ -67,7 +67,7 @@ RUN apt-get update &&  \
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin
 
 # Install Android SDK
-RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;25.0.2" "build-tools;28.0.3" "platforms;android-25" "platform-tools"
+RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;25.0.5" "build-tools;27.0.1" "build-tools;26.0.2" "build-tools;24.0.4" "build-tools;28.0.2" "platforms;android-25" "platforms;android-19" "platforms;android-20" "platforms;android-21" "platforms;android-22" "platforms;android-23" "platforms;android-24" "platforms;android-25" "platforms;android-26" "platforms;android-27" "platforms;android-28" "platform-tools"
 RUN cordova telemetry off
 
 WORKDIR Sources
