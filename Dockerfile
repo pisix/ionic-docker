@@ -67,7 +67,39 @@ RUN apt-get update &&  \
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin
 
 # Install Android SDK
-RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;25.0.5" "build-tools;27.0.1" "build-tools;26.0.2" "build-tools;24.0.4" "build-tools;28.0.2" "platforms;android-25" "platforms;android-19" "platforms;android-20" "platforms;android-21" "platforms;android-22" "platforms;android-23" "platforms;android-24" "platforms;android-25" "platforms;android-26" "platforms;android-27" "platforms;android-28" "platform-tools"
+RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
+RUN ${ANDROID_HOME}/tools/bin/sdkmanager "platform-tools"
+
+RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager "platforms;android-19" \
+    "platforms;android-20" \
+    "platforms;android-21" \
+    "platforms;android-22" \
+    "platforms;android-23" \
+    "platforms;android-24" \
+    "platforms;android-25" \
+    "platforms;android-26" \
+    "platforms;android-27" \
+    "platforms;android-28" \
+    "build-tools;19.1.0" \
+    "build-tools;20.0.0" \
+    "build-tools;21.1.2" \
+    "build-tools;22.0.1" \
+    "build-tools;23.0.3" \
+    "build-tools;24.0.3" \
+    "build-tools;25.0.3" \
+    "build-tools;26.0.3" \
+    "build-tools;27.0.1" \
+    "build-tools;28.0.2" \
+    "extras;android;m2repository" \
+    "extras;google;m2repository" \
+    "extras;google;google_play_services" \
+    "add-ons;addon-google_apis-google-19" \
+    "add-ons;addon-google_apis-google-21" \
+    "add-ons;addon-google_apis-google-22" \
+    "add-ons;addon-google_apis-google-23" \
+    "add-ons;addon-google_apis-google-24"
+
+
 RUN cordova telemetry off
 
 WORKDIR Sources
