@@ -36,10 +36,10 @@ RUN apt-get update &&  \
     apt-get install default-jre -y && \
     apt-get install default-jdk -y && \
     echo java -version && \ 
-    wget https://launchpad.net/~webupd8team/+archive/ubuntu/java/+build/11877877/+files/oracle-java8-installer_8u121-1~webupd8~0_all.deb && \
-    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
-    dpkg -i oracle-java8-installer_8u121-1~webupd8~0_all.deb && \
-    echo java -version && \ 
+    #wget https://launchpad.net/~webupd8team/+archive/ubuntu/java/+build/11877877/+files/oracle-java8-installer_8u121-1~webupd8~0_all.deb && \
+    #echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+    #dpkg -i oracle-java8-installer_8u121-1~webupd8~0_all.deb && \
+    #echo java -version && \ 
 
 # System libs for android enviroment
     echo ANDROID_HOME="${ANDROID_HOME}" >> /etc/environment && \
