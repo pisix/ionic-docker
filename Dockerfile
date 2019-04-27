@@ -63,7 +63,7 @@ RUN apt-get update &&  \
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin
 
 # Install Android SDK
-RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager --update
+RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager --update --allow-unauthenticated
 RUN yes Y | ${ANDROID_HOME}/tools/bin/sdkmanager --licenses
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "platform-tools"
 
