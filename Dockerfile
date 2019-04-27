@@ -35,9 +35,10 @@ RUN apt-get update &&  \
     apt-get update && apt-get install -y -q software-properties-common  && \
     apt-get install default-jre -y && \
     apt-get install default-jdk -y && \
-    add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" -y && \
-    apt-get update && apt-get -y install oracle-java8-installer && \
-    echo javac -version && \ 
+    echo java -version && \ 
+    wget https://launchpad.net/~webupd8team/+archive/ubuntu/java/+build/11877877/+files/oracle-java8-installer_8u121-1~webupd8~0_all.deb && \
+    dpkg -i oracle-java8-installer_8u121-1~webupd8~0_all.deb -y && \
+    echo java -version && \ 
 
 # System libs for android enviroment
     echo ANDROID_HOME="${ANDROID_HOME}" >> /etc/environment && \
