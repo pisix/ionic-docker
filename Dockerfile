@@ -37,7 +37,7 @@ RUN apt-get update &&  \
     apt-get install default-jdk -y && \
     echo java -version && \ 
     wget https://launchpad.net/~webupd8team/+archive/ubuntu/java/+build/11877877/+files/oracle-java8-installer_8u121-1~webupd8~0_all.deb && \
-    dpkg -i oracle-java8-installer_8u121-1~webupd8~0_all.deb -y && \
+    dpkg -i oracle-java8-installer_8u121-1~webupd8~0_all.deb && \
     echo java -version && \ 
 
 # System libs for android enviroment
