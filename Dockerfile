@@ -58,8 +58,9 @@ RUN apt-get update &&  \
     unzip -q gradle.zip && \
     rm -f gradle.zip && \
     chown -R root. /opt
+    
 #Install Fastlane
-RUN apt-get-install -y ruby && gem install fastlane -NV
+RUN apt-get install -y ruby && gem install fastlane -NV
 
 # Setup environment
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin
